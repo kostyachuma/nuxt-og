@@ -3,7 +3,7 @@ const route = useRoute()
 
 const title = route.query?.title || 'Hello World'
 const date = route.query?.date || new Date().toISOString()
-const href = `/image?title=${title}`
+const href = `/image.png?title=${title}`
 
 const origin = useRequestURL().origin
 
@@ -15,7 +15,7 @@ useSeoMeta({
   ogDescription: date as string,
   ogType: 'website',
   ogUrl: origin,
-  ogImage: `${origin}/image?title=${title}&date=${date}`,
+  ogImage: `${origin}/image.png?title=${title}`,
   ogImageAlt: `${title} page cover`,
   ogLocale: 'en_US',
   ogSiteName: 'My Site',
@@ -27,7 +27,7 @@ useSeoMeta({
   twitterCreator: '@twitter',
   twitterTitle: title as string,
   twitterDescription: date as string,
-  twitterImage: `${origin}/image?title=${title}&date=${date}`,
+  twitterImage: `${origin}/image.png?title=${title}`,
 })
 </script>
 

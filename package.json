@@ -12,7 +12,6 @@
   "dependencies": {
     "nuxt": "^3.14.1592",
     "puppeteer": "^23.9.0",
-    "puppeteer-core": "^23.9.0",
     "vue": "latest",
     "vue-router": "latest"
   }

@@ -5,12 +5,14 @@ const title = route.query?.title || 'Hello World'
 const date = route.query?.date || new Date().toISOString()
 const href = `/image?title=${title}`
 
+const origin = useRequestURL().origin
+
 useSeoMeta({
   title: title as string,
   ogTitle: title as string,
   description: date as string,
   ogDescription: date as string,
-  ogImage: `http://localhost:3000/image?title=${title}&date=${date}`,
+  ogImage: `${origin}/image?title=${title}&date=${date}`,
   twitterCard: 'summary_large_image',
 })
 </script>

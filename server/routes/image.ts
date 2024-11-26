@@ -13,7 +13,9 @@ export default defineEventHandler(async (event) => {
   const browser = await puppeteer.launch();
   const page= await browser.newPage();
 
-  await page.goto(`http://localhost:3000/?title=${title}&date=${date}`, {
+  const origin = getRequestURL(event).origin;
+
+  await page.goto(`${origin}/?title=${title}&date=${date}`, {
     waitUntil: 'networkidle2',
   });
 

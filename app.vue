@@ -9,12 +9,25 @@ const origin = useRequestURL().origin
 
 useSeoMeta({
   title: title as string,
-  ogTitle: title as string,
   description: date as string,
+
+  ogTitle: title as string,
   ogDescription: date as string,
+  ogType: 'website',
+  ogUrl: origin,
   ogImage: `${origin}/image?title=${title}&date=${date}`,
-  twitterImage: `${origin}/image?title=${title}&date=${date}`,
+  ogImageAlt: `${title} page cover`,
+  ogLocale: 'en_US',
+  ogSiteName: 'My Site',
+  ogImageWidth: '800',
+  ogImageHeight: '420',
+
   twitterCard: 'summary_large_image',
+  twitterSite: '@twitter',
+  twitterCreator: '@twitter',
+  twitterTitle: title as string,
+  twitterDescription: date as string,
+  twitterImage: `${origin}/image?title=${title}&date=${date}`,
 })
 </script>
 

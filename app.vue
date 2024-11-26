@@ -13,6 +13,7 @@ useSeoMeta({
   description: date as string,
   ogDescription: date as string,
   ogImage: `${origin}/image?title=${title}&date=${date}`,
+  twitterImage: `${origin}/image?title=${title}&date=${date}`,
   twitterCard: 'summary_large_image',
 })
 </script>

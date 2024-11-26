@@ -1,4 +1,7 @@
-import puppeteer from 'puppeteer';
+// import puppeteer from 'puppeteer';
+
+import puppeteer from "puppeteer-core";
+import chromium from "@sparticuz/chromium";
 
 interface QueryParams {
   title?: string;
@@ -10,7 +13,13 @@ export default defineEventHandler(async (event) => {
   const title: string = query.title || '0';
   const date: string = query.date || new Date().toISOString();
 
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath(),
+    headless: chromium.headless,
+  });
+
   const page= await browser.newPage();
 
   const origin = getRequestURL(event).origin;
